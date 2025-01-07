@@ -4,6 +4,9 @@ The Common Land Model (CoLM) is widely used for simulating land surface processe
 
 This version ensures consistency with the Fortran-based implementation of CoLM, maintaining the accuracy and reliability of scientific computations.
 
+Executives: Zhu Jinlong, Li Qingliang, Zhang Cheng and Zhong Zhichao
+Team Members: All members of the team led by Academician Dai Yongjiu
+
 # Features
 - **Fully rewritten in Python**: Improved code readability and maintainability.
 - **Verified results**: Consistent with the Fortran version to ensure scientific rigor.
