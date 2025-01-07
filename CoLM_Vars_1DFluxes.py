@@ -1,0 +1,157 @@
+import numpy as np
+class CoLM_Vars_1DFluxes:
+    def __init__(self, numpatch, spval):
+        
+        self.numpatch = numpatch
+        self.spval = spval  # Placeholder for special value
+
+        # Initialize all flux arrays to None
+        self.taux = None
+        self.tauy = None
+        self.fsena = None
+        self.lfevpa = None
+        self.fevpa = None
+        self.fsenl = None
+        self.fevpl = None
+        self.etr = None
+        self.fseng = None
+        self.fevpg = None
+        self.fgrnd = None
+        self.sabvsun = None
+        self.sabvsha = None
+        self.sabg = None
+        self.sr = None
+        self.solvd = None
+        self.solvi = None
+        self.solnd = None
+        self.solni = None
+        self.srvd = None
+        self.srvi = None
+        self.srnd = None
+        self.srni = None
+        self.solvdln = None
+        self.solviln = None
+        self.solndln = None
+        self.solniln = None
+        self.srvdln = None
+        self.srviln = None
+        self.srndln = None
+        self.srniln = None
+        self.olrg = None
+        self.rnet = None
+        self.xerr = None
+        self.zerr = None
+        self.rsur = None
+        self.rsur_se = None
+        self.rsur_ie = None
+        self.rsub = None
+        self.rnof = None
+        self.qintr = None
+        self.qinfl = None
+        self.qdrip = None
+        self.assim = None
+        self.respc = None
+        self.qcharge = None
+        self.oroflag = None
+
+    def allocate_1D_Fluxes(self, p_is_worker):
+        if p_is_worker and self.numpatch > 0:
+            # Allocate and initialize flux arrays with special value
+            self.taux = np.full(self.numpatch, self.spval)
+            self.tauy = np.full(self.numpatch, self.spval)
+            self.fsena = np.full(self.numpatch, self.spval)
+            self.lfevpa = np.full(self.numpatch, self.spval)
+            self.fevpa = np.full(self.numpatch, self.spval)
+            self.fsenl = np.full(self.numpatch, self.spval)
+            self.fevpl = np.full(self.numpatch, self.spval)
+            self.etr = np.full(self.numpatch, self.spval)
+            self.fseng = np.full(self.numpatch, self.spval)
+            self.fevpg = np.full(self.numpatch, self.spval)
+            self.fgrnd = np.full(self.numpatch, self.spval)
+            self.sabvsun = np.full(self.numpatch, self.spval)
+            self.sabvsha = np.full(self.numpatch, self.spval)
+            self.sabg = np.full(self.numpatch, self.spval)
+            self.sr = np.full(self.numpatch, self.spval)
+            self.solvd = np.full(self.numpatch, self.spval)
+            self.solvi = np.full(self.numpatch, self.spval)
+            self.solnd = np.full(self.numpatch, self.spval)
+            self.solni = np.full(self.numpatch, self.spval)
+            self.srvd = np.full(self.numpatch, self.spval)
+            self.srvi = np.full(self.numpatch, self.spval)
+            self.srnd = np.full(self.numpatch, self.spval)
+            self.srni = np.full(self.numpatch, self.spval)
+            self.solvdln = np.full(self.numpatch, self.spval)
+            self.solviln = np.full(self.numpatch, self.spval)
+            self.solndln = np.full(self.numpatch, self.spval)
+            self.solniln = np.full(self.numpatch, self.spval)
+            self.srvdln = np.full(self.numpatch, self.spval)
+            self.srviln = np.full(self.numpatch, self.spval)
+            self.srndln = np.full(self.numpatch, self.spval)
+            self.srniln = np.full(self.numpatch, self.spval)
+            self.olrg = np.full(self.numpatch, self.spval)
+            self.rnet = np.full(self.numpatch, self.spval)
+            self.xerr = np.full(self.numpatch, self.spval)
+            self.zerr = np.full(self.numpatch, self.spval)
+            self.rsur = np.full(self.numpatch, self.spval)
+            self.rsur_se = np.full(self.numpatch, self.spval)
+            self.rsur_ie = np.full(self.numpatch, self.spval)
+            self.rsub = np.full(self.numpatch, self.spval)
+            self.rnof = np.full(self.numpatch, self.spval)
+            self.qintr = np.full(self.numpatch, self.spval)
+            self.qinfl = np.full(self.numpatch, self.spval)
+            self.qdrip = np.full(self.numpatch, self.spval)
+            self.assim = np.full(self.numpatch, self.spval)
+            self.respc = np.full(self.numpatch, self.spval)
+            self.qcharge = np.full(self.numpatch, self.spval)
+            self.oroflag = np.full(self.numpatch, self.spval)
+
+    def deallocate_1D_Fluxes(self, p_is_worker):
+        if p_is_worker and self.numpatch > 0:
+            # Deallocate flux arrays by setting them to None
+            self.taux = None
+            self.tauy = None
+            self.fsena = None
+            self.lfevpa = None
+            self.fevpa = None
+            self.fsenl = None
+            self.fevpl = None
+            self.etr = None
+            self.fseng = None
+            self.fevpg = None
+            self.fgrnd = None
+            self.sabvsun = None
+            self.sabvsha = None
+            self.sabg = None
+            self.sr = None
+            self.solvd = None
+            self.solvi = None
+            self.solnd = None
+            self.solni = None
+            self.srvd = None
+            self.srvi = None
+            self.srnd = None
+            self.srni = None
+            self.solvdln = None
+            self.solviln = None
+            self.solndln = None
+            self.solniln = None
+            self.srvdln = None
+            self.srviln = None
+            self.srndln = None
+            self.srniln = None
+            self.olrg = None
+            self.rnet = None
+            self.xerr = None
+            self.zerr = None
+            self.rsur = None
+            self.rsur_se = None
+            self.rsur_ie = None
+            self.rsub = None
+            self.rnof = None
+            self.qintr = None
+            self.qinfl = None
+            self.qdrip = None
+            self.assim = None
+            self.respc = None
+            self.qcharge = None
+            self.oroflag = None

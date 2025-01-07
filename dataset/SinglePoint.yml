@@ -1,0 +1,61 @@
+DEF_CASE_NAME: CN_Dan         
+   
+# surface data from SITE.
+SITE_fsrfdata: Srfdata/AU-How_2003-2017_OzFlux_Srf.nc
+# path to surface database
+DEF_dir_rawdata: /CoLMrawdata/
+DEF_dir_runtime: /tera07/CoLMruntime/
+
+# true  : surface data from SITE
+# false : surface data is retrieved from database.
+USE_SITE_pctpfts        : False
+USE_SITE_pctcrop        : False
+USE_SITE_htop           : False
+USE_SITE_LAI            : False 
+USE_SITE_lakedepth      : False
+USE_SITE_soilreflectance: False
+USE_SITE_soilparameters : False
+USE_SITE_topography     : False
+
+DEF_simulation_time%greenwich    : False
+DEF_simulation_time%start_year   : 2004
+DEF_simulation_time%start_month  : 1
+DEF_simulation_time%start_day    : 1
+DEF_simulation_time%start_sec    : 0
+DEF_simulation_time%end_year     : 2005
+DEF_simulation_time%end_month    : 12
+DEF_simulation_time%end_day      : 31
+DEF_simulation_time%end_sec      : 86400
+DEF_simulation_time%spinup_year  : 2004
+DEF_simulation_time%spinup_month : 1
+DEF_simulation_time%spinup_day   : 31
+DEF_simulation_time%spinup_sec   : 86400
+DEF_simulation_time%spinup_repeat: 2
+
+DEF_simulation_time%timestep    : 800.
+
+DEF_dir_output: D:\code\code\code\cases\SinglePoint
+
+# LAI setting
+DEF_LAI_MONTHLY: False
+
+## irrigation method
+#DEF_IRRIGATION_METHOD:1 # 1:drip; 2:sprinkler; 3:flood; 4:paddy
+
+# Canopy DEF Interception scheme selection
+DEF_Interception_scheme: 1 # 1:CoLM2014；2:CLM4.5; 3:CLM5; 4:Noah-MP; 5:MATSIRO; 6:VIC
+
+# ----- forcing -----
+DEF_forcing_namelist: forcing/POINT.yml
+
+# ----- history -----
+DEF_hist_lon_res: 1.
+DEF_hist_lat_res: 1. 
+DEF_WRST_FREQ: YEARLY   # write restart file frequency: HOURLY/DAILY/MONTHLY/YEARLY
+DEF_HIST_FREQ: DAILY    # write history file frequency: HOURLY/DAILY/MONTHLY/YEARLY
+DEF_HIST_groupby: YEAR  # history in one file: DAY/MONTH/YEAR
+DEF_REST_COMPRESS_LEVEL: 0
+DEF_HIST_COMPRESS_LEVEL: 0
+
+DEF_hist_vars_namelist: history.yml
+DEF_hist_vars_out_default: True

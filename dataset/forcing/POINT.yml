@@ -1,0 +1,27 @@
+# ----- forcing -----
+DEF_dir_forcing : /tera06/zhwei/CoLM_Forcing/PLUMBER2/Forcing/
+
+DEF_forcing:
+  dataset          : POINT 
+  solarin_all_band : True  
+  HEIGHT_V         : 100.0    
+  HEIGHT_T         : 50.
+  HEIGHT_Q         : 50.
+
+  NVAR             : 8        # variable number of forcing data
+  startyr          : 2013     # start year of forcing data  
+  startmo          : 1        # start month of forcing data
+  endyr            : 2020     # end year of forcing data
+  endmo            : 12       # end month of forcing data
+
+  fprefix: [CN-Dan_2004-2005_FLUXNET2015_Met.nc,
+   CN-Dan_2004-2005_FLUXNET2015_Met.nc,
+   CN-Dan_2004-2005_FLUXNET2015_Met.nc,
+   CN-Dan_2004-2005_FLUXNET2015_Met.nc,
+   CN-Dan_2004-2005_FLUXNET2015_Met.nc,
+   CN-Dan_2004-2005_FLUXNET2015_Met.nc,
+   CN-Dan_2004-2005_FLUXNET2015_Met.nc,
+   CN-Dan_2004-2005_FLUXNET2015_Met.nc]
+
+  vname   : [Tair,Qair,Psurf,Precip,None,Wind,SWdown,LWdown ]
+  tintalgo: [linear,linear,linear,nearest,None,linear,coszen,linear]

@@ -1,0 +1,173 @@
+DEF_nx_blocks: 72
+DEF_ny_blocks: 36
+DEF_PIO_groupsize: 12
+USE_SITE_pctpfts: True
+USE_SITE_pctcrop: True
+USE_SITE_htop: True
+USE_SITE_LAI: True
+USE_SITE_lakedepth: True
+USE_SITE_soilreflectance: True
+USE_SITE_soilparameters: True
+USE_SITE_dbedrock: True
+USE_SITE_topography: True
+USE_SITE_HistWriteBack: True
+USE_SITE_ForcingReadAhead: True
+USE_SITE_urban_paras: False
+USE_SITE_thermal_paras: False
+USE_SITE_urban_LAI: False  
+DEF_BlockInfoFile: ''     
+DEF_AverageElementSize: -1
+
+# Set default directories and files
+DEF_dir_rawdata: path/to/rawdata/
+DEF_dir_runtime: path/to/runtime/
+DEF_dir_output: path/to/output/data
+DEF_dir_forcing : path/to/forcing/data
+
+DEF_dir_landdata: path/to/landdata
+DEF_dir_restart: path/to/restart
+DEF_dir_history: path/to/history
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ----- Part 6: make surface data -----
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Set default parameters for making surface data
+DEF_file_mesh: path/to/mesh/file
+DEF_GRIDBASED_lon_res: 0.5
+DEF_GRIDBASED_lat_res: 0.5
+
+DEF_CatchmentMesh_data: path/to/catchment/data
+
+DEF_file_mesh_filter: path/to/mesh/filter
+
+USE_srfdata_from_larger_region: False
+DEF_dir_existing_srfdata: path/to/landdata
+USE_srfdata_from_3D_gridded_data: False
+
+DEF_LC_YEAR: 2005
+
+DEF_USE_USGS: False
+DEF_USE_IGBP: False
+DEF_USE_LCT: False
+DEF_USE_PFT: False
+DEF_USE_PC: False
+DEF_SOLO_PFT: False
+DEF_FAST_PC: False
+DEF_SUBGRID_SCHEME: LCT
+
+DEF_LANDONLY: True
+DEF_USE_DOMINANT_PATCHTYPE: False
+
+DEF_USE_SOILPAR_UPS_FIT: True
+
+DEF_SOIL_REFL_SCHEME: 2
+
+USE_zip_for_aggregation: True
+
+DEF_Srfdata_CompressLevel: 1
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ----- Part 7: Leaf Area Index -----
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Set parameters related to Leaf Area Index
+DEF_LAI_MONTHLY: True
+DEF_LAI_CHANGE_YEARLY: True
+DEF_USE_LAIFEEDBACK: False
+DEF_USE_IRRIGATION: False
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ----- Part 8: Initialization -----
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+DEF_USE_SoilInit: False  # logical
+DEF_file_SoilInit:   # character(len=256)
+
+DEF_USE_SnowInit: False  # logical
+DEF_file_SnowInit:   # character(len=256)
+
+DEF_USE_CN_INIT: False  # logical
+DEF_file_cn_init:   # character(len=256)
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ----- Part 9: LULCC related ------
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+DEF_LULCC_SCHEME: 1  # Options for LULCC year-to-year transfer schemes
+                    # 1: Same Type Assignment scheme (STA) state variables assignment for the same type (LC PFT or PC)
+                    # 2: Mass and Energy Conservation scheme (MEC) DO mass and energy conservation calculation
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ----- Part 10: Urban model related ------
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+DEF_URBAN_type_scheme: 1  # Options for urban type scheme
+                            # 1: NCAR Urban Classification 3 urban type with Tall Building High Density and Medium Density
+                            # 2: LCZ Classification 10 urban type with LCZ 1-10
+
+DEF_URBAN_ONLY: False  # logical
+DEF_URBAN_RUN: False
+DEF_URBAN_BEM: True  # logical
+DEF_URBAN_TREE: True  # logical
+DEF_URBAN_WATER: True  # logical
+DEF_URBAN_LUCY: True  # logical
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ----- Part 11: parameteration schemes -----
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+DEF_NDEP_FREQUENCY: 1  # 1: To allow annuaul ndep data to be read in
+                        # 2: To allow monthly ndep data to be read in
+
+DEF_Interception_scheme: 1  # 1:CoLM；2:CLM4.5; 3:CLM5; 4:Noah-MP; 5:MATSIRO; 6:VIC; 7:JULES
+
+DEF_THERMAL_CONDUCTIVITY_SCHEME: 4  # Options for soil thermal conductivity schemes
+                                    # 1: Farouki (1981)
+                                    # 2: Johansen(1975)
+                                    # 3: Cote and Konrad (2005)
+                                    # 4: Balland and Arp (2005)
+                                    # 5: Lu et al. (2007)
+                                    # 6: Tarnawski and Leong (2012)
+                                    # 7: De Vries (1963)
+                                    # 8: Yan Hengnian He Hailong et al.(2019)
+
+DEF_USE_SUPERCOOL_WATER: True  # supercooled soil water scheme Niu & Yang (2006)
+
+DEF_RSS_SCHEME: 1  # Options for soil surface resistance schemes
+                    # 0: NONE soil surface resistance
+                    # 1: SL14 Swenson and Lawrence (2014)
+                    # 2: SZ09 Sakaguchi and Zeng (2009)
+                    # 3: TR13 Tang and Riley (2013)
+                    # 4: LP92 Lee and Pielke (1992)
+                    # 5: S92  Sellers et al (1992)
+
+DEF_SPLIT_SOILSNOW: False  # Treat exposed soil and snow surface separatly...
+
+DEF_USE_VariablySaturatedFlow: True  # logical
+DEF_USE_BEDROCK: False  # logical   
+DEF_USE_OZONESTRESS: False
+DEF_USE_OZONEDATA: False 
+DEF_USE_SNICAR: False
+DEF_Aerosol_Readin: True           
+DEF_Aerosol_Clim: False
+
+DEF_USE_EstimatedRiverDepth: True  # logical
+DEF_ElementNeighbour_file:   # character(len=256)
+
+DEF_precip_phase_discrimination_scheme: II  # character(len=5)
+DEF_SSP: 585  # character(len=256)
+
+DEF_USE_Forcing_Downscaling: False  # logical
+DEF_DS_precipitation_adjust_scheme: II  # character(len=5)
+DEF_DS_longwave_adjust_scheme: II  # character(len=5)
+
+DEF_USE_CBL_HEIGHT: False
+DEF_USE_PLANTHYDRAULICS: True  # logical
+DEF_USE_MEDLYNST: False  # logical
+DEF_USE_SASU: False  # logical
+DEF_USE_PN: False  # logical
+DEF_USE_NITRIF: True  # logical
+DEF_USE_FIRE: False  # logical
+DEF_USE_FERT: True
+DEF_USE_CNSOYFIXN: True

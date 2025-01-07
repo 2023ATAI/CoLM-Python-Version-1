@@ -1,0 +1,126 @@
+DEF_CASE_NAME: Guangdong
+
+DEF_domain%edges:   20.0
+DEF_domain%edgen:   25.0
+DEF_domain%edgew:  110.0
+DEF_domain%edgee:  115.0   
+
+DEF_nx_blocks: 30
+DEF_ny_blocks: 30
+DEF_PIO_groupsize: 6
+
+DEF_simulation_time%greenwich    : TRUE
+DEF_simulation_time%start_year   : 2001
+DEF_simulation_time%start_month  : 1
+DEF_simulation_time%start_day    : 1
+DEF_simulation_time%start_sec    : 0
+DEF_simulation_time%end_year     : 2001
+DEF_simulation_time%end_month    : 1
+DEF_simulation_time%end_day      : 1
+DEF_simulation_time%end_sec      : 1800
+DEF_simulation_time%spinup_year  : 2000
+DEF_simulation_time%spinup_month : 1
+DEF_simulation_time%spinup_day   : 1
+DEF_simulation_time%spinup_sec   : 0
+DEF_simulation_time%spinup_repeat: 0
+
+DEF_simulation_time%timestep    : 1800.
+
+# path to surface database
+# 下面2个路径需要改成自己的路径设置，即下载的分享文件的路径
+DEF_dir_rawdata: /data/CoLMrawdata/
+DEF_dir_runtime: /data/CoLMruntime/
+# case输出路径，有读写权限即可
+#DEF_dir_output: /data//Guangdong
+DEF_dir_output: /home/liqingliang/ATAI
+
+# ----- land units and land sets -----
+#  ! for GRIDBASED
+#DEF_GRIDBASED_lon_res : 0.00416667
+#DEF_GRIDBASED_lat_res : 0.00416667
+DEF_GRIDBASED_lon_res : 0.5
+DEF_GRIDBASED_lat_res : 0.5
+
+
+# LAI setting
+DEF_LAI_MONTHLY: TRUE
+DEF_LAI_CHANGE_YEARLY: False
+
+# LandCover setting
+DEF_LC_YEAR : 2020
+
+# ----- Soil Surface Resistance options -----
+#   ! 0: NONE soil surface resistance
+#  ! 1: SL14, Swenson and Lawrence (2014)
+#   ! 2: SZ09, Sakaguchi and Zeng (2009)
+#   ! 3: TR13, Tang and Riley (2013)
+#   ! 4: LP92, Lee and Pielke (1992)
+#   ! 5: S92,  Sellers et al (1992)
+DEF_RSS_SCHEME : 1
+
+# ----- Urban options -----
+#   ! urban type options
+#   ! Options :
+#   ! 1: NCAR Urban Classification, 3 urban type with Tall Building, High Density and Medium Density
+#   ! 2: LCZ Classification, 10 urban type with LCZ 1-10
+DEF_URBAN_type_scheme : 1
+
+# ----- urban module options -----
+DEF_URBAN_ONLY : False
+DEF_URBAN_TREE : TRUE
+DEF_URBAN_WATER: TRUE
+DEF_URBAN_BEM  : TRUE
+DEF_URBAN_LUCY : TRUE
+# --------------------------------
+
+# ----- Canopy DEF Interception scheme selection -----
+DEF_Interception_scheme: 1 #!1:CoLM2014；2:CLM4.5; 3:CLM5; 4:Noah-MP; 5:MATSIRO; 6:VIC
+# --------------------------------
+
+# ----- Hydrology module  -----
+DEF_USE_SUPERCOOL_WATER : False
+DEF_USE_VariablySaturatedFlow : True
+DEF_USE_PLANTHYDRAULICS : False
+# --------------------------------
+
+# ----- SNICAR  -----
+DEF_USE_SNICAR : False
+DEF_Aerosol_Readin : TRUE
+DEF_Aerosol_Clim : False
+# --------------------------------
+
+# ----- Ozone MODULE  -----
+DEF_USE_OZONESTRESS : False
+DEF_USE_OZONEDATA : False
+# --------------------------------
+
+# ----- Bedrock  -----
+DEF_USE_BEDROCK : False
+# --------------------------------
+
+# ----- Split Soil Snow  -----
+DEF_USE_Forcing_Downscaling : False
+DEF_DS_precipitation_adjust_scheme : 'II'
+DEF_DS_longwave_adjust_scheme : 'II'
+# --------------------------------
+
+# ----- forcing  -----
+#! Options :
+#! PRINCETON | GSWP3   | QIAN  | CRUNCEPV4 | CRUNCEPV7 | ERA5LAND | ERA5 |  MSWX
+#! WFDE5     | CRUJRA  | WFDEI | JRA55     | GDAS      | CMFD     | POINT
+# 根据自己代码目录设置
+DEF_forcing_namelist : '/home/liqingliang/ATAI/CoLM/code/dataset/forcing/GSWP3.yml'
+
+# ----- history  -----
+DEF_hist_lon_res : 0.5
+DEF_hist_lat_res : 0.5
+DEF_WRST_FREQ : 'MONTHLY' #! write restart file frequency: HOURLY/DAILY/MONTHLY/YEARLY
+DEF_HIST_FREQ : 'MONTHLY' #! write history file frequency: HOURLY/DAILY/MONTHLY/YEARLY
+DEF_HIST_groupby : 'MONTH' #! history in one file: DAY/MONTH/YEAR
+DEF_HIST_mode : 'one' #! history in one or block
+DEF_REST_CompressLevel : 1
+DEF_HIST_CompressLevel : 1
+
+# 下面的路径可不设置
+DEF_hist_vars_namelist : 'null'
+DEF_hist_vars_out_default : False

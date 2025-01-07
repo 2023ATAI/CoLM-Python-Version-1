@@ -1,0 +1,49 @@
+# ----- forcing -----
+DEF_dir_forcing : '/tera06/zhwei/CoLM_Forcing/GSWP3/'
+
+DEF_forcing:
+  dataset          : 'CRUNCEP'
+  solarin_all_band : True
+  HEIGHT_V         : 100.0
+  HEIGHT_T         : 50.
+  HEIGHT_Q         : 50.
+
+  regional: False
+  regbnd: [ -90.0, 90.0, -180.0, 180.0 ]
+  has_missing_value: False
+
+  NVAR             : 8        # variable number of forcing data
+  startyr          : 2000     # start year of forcing data
+  startmo          : 1        # start month of forcing data
+  endyr            : 2003     # end year of forcing data
+  endmo            : 12       # end month of forcing data
+  dtime            : [21600,21600,21600,21600,0,21600,21600,21600]
+  offset           : [10800,10800,10800,10800,0,10800,0,10800]
+  nlands           : 1       # land grid number in 1d
+  leapyear         : Fales   # leapyear calendar
+  data2d           : True    # data in 2 dimension (lon, lat)
+  hightdim         : Fales   # have "z" dimension
+  dim2d            : True    # lat/lon value in 2 dimension (lon, lat)
+  latname          : 'LATIXY'  # dimension name of latitude
+  lonname          : 'LONGXY'  # dimension name of longitude
+  groupby          : 'month'   # file grouped by year/month
+
+
+
+  fprefix: ['PHWL6Hrly/clmforc.cruncep.V4.c2011.0.5d.TPQWL.',
+    'TPHWL6Hrly/clmforc.cruncep.V4.c2011.0.5d.TPQWL.',
+    'TPHWL6Hrly/clmforc.cruncep.V4.c2011.0.5d.TPQWL.',
+    'Precip6Hrly/clmforc.cruncep.V4.c2011.0.5d.Prec.',
+    none                                           ,
+    'TPHWL6Hrly/clmforc.cruncep.V4.c2011.0.5d.TPQWL.',
+    'Solar6Hrly/clmforc.cruncep.V4.c2011.0.5d.Solr. ',
+    'TPHWL6Hrly/clmforc.cruncep.V4.c2011.0.5d.TPQWL.']
+
+  vname   : [TBOT,QBOT,PSRF,PRECTmms,None,WIND,FSDS,FLDS ]
+  tintalgo: [linear,linear,linear,nearest,None,linear,coszen,linear]
+
+  CBL_fprefix        : TPHWL6Hrly/clmforc.cruncep.V4.c2011.0.5d.TPQWL.
+  CBL_vname          : blh
+  CBL_tintalgo       : linear
+  CBL_dtime          : 21600
+  CBL_offset         : 10800

@@ -1,0 +1,65 @@
+# 1. Spatial structure:
+#    Select one of the following options.
+GRIDBASED: True
+CATCHMENT: False
+UNSTRUCTURED: False
+SinglePoint: True
+
+# 2. Land TYPE classification :
+#    Select one of the following options.
+LULC_USGS: False
+LULC_IGBP: True
+LULC_IGBP_PFT: False
+LULC_IGBP_PC: False
+
+# 2.1 Urban model setting (put it temporarily here):
+URBAN_MODEL: False
+URBAN_LCZ: False
+
+# 3. If defined, debug information is output.
+CoLMDEBUG:  False
+# 3.1 If defined, range of variables is checked.
+RangeCheck: True
+# 3.1 If defined, surface data in vector is mapped to gridded data for checking.
+SrfdataDiag: False
+
+# 4. If defined, MPI parallelization is enabled.
+USEMPI: True
+#    Conflict: not used when defined SingPoint.
+#if (defined SinglePoint)
+#undef USEMPI
+#endif
+
+# 5. Hydrological process options.
+# 5.1 Two soil hydraulic models can be used.
+Campbell_SOIL_MODEL: False
+vanGenuchten_Mualem_SOIL_MODEL: True
+# 5.2 If defined, lateral flow is modeled.
+LATERAL_FLOW: True
+#    Conflicts :
+#ifndef CATCHMENT
+#undef LATERAL_FLOW
+#endif
+
+# 6. If defined, CaMa-Flood model will be used.
+CaMa_Flood: False
+
+# 7. If defined, BGC model is used.
+BGC: False
+
+#    Conflicts :  only used when LULC_IGBP_PFT is defined.
+#ifndef LULC_IGBP_PFT
+#undef BGC
+#endif
+# 7.1 If defined, CROP model is used
+CROP: False
+#    Conflicts : only used when BGC is defined
+#ifndef BGC
+#undef CROP
+#endif
+
+# 8. If defined, open Land use and land cover change mode.
+LULCC: False
+
+# 9. If defined, data assimilation is used.
+DataAssimilation: False

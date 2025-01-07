@@ -1,0 +1,15 @@
+greenwich: True
+start_year: 2011
+start_month: 1
+start_day: 1
+start_sec: 0
+end_year: 2016
+end_month: 1
+end_day: 1
+end_sec: 0
+spinup_year: 2020
+spinup_month: 1
+spinup_day: 1
+spinup_sec: 0
+spinup_repeat: 0
+timestep: 1800.0
